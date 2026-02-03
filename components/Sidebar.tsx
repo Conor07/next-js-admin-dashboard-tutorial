@@ -24,7 +24,7 @@ type SidebarProps = {};
 
 const Sidebar: React.FC<SidebarProps> = () => {
   return (
-    <Command className="bg-slate-200 rounded-none">
+    <Command className="bg-slate-200 rounded-none dark:bg-slate-800">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

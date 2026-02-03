@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import logo from "@/img/logo.png";
+import ThemeToggler from "./ThemeToggler";
 
 type NavbarProps = {};
 
@@ -22,29 +23,33 @@ const Navbar: React.FC<NavbarProps> = () => {
         <Image src={logo} alt="Logo" width={40} height={40} />
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className="focus:outline-none">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <div className="flex items-center">
+        <ThemeToggler />
 
-            <AvatarFallback className="text-black">CT</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
 
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <AvatarFallback className="text-black">CT</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
 
-          <DropdownMenuSeparator />
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
 
-          <DropdownMenuItem>
-            <Link href="/profile">Profile</Link>
-          </DropdownMenuItem>
+            <DropdownMenuSeparator />
 
-          <DropdownMenuItem>
-            <Link href="/auth">Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            <DropdownMenuItem>
+              <Link href="/profile">Profile</Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link href="/auth">Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 };

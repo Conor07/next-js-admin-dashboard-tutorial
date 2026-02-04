@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
@@ -37,16 +35,7 @@ export default function RootLayout({
           enableSystem={true}
           storageKey="dashboard-theme"
         >
-          <Navbar />
-
-          <div className="flex">
-            <div className="hidden md:block h-[100vh] w-[300px]">
-              <Sidebar />
-            </div>
-
-            <div className="p-5 w-full md:max-w-[1140px]">{children}</div>
-          </div>
-
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
